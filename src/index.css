@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color-scheme: dark;
+  }
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #07080a;
+}
+::-webkit-scrollbar-thumb {
+  background: #262c3a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c59b43;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(17, 20, 26, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 184, 105, 0.12);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(229, 184, 105, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.7), 0 0 25px -5px rgba(197, 155, 67, 0.15);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fff2cc 0%, #e5b869 50%, #ab7f34 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-glow {
+  box-shadow: 0 0 30px rgba(229, 184, 105, 0.2);
+}
+
+/* Image zoom effect */
+.gallery-img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.gallery-card:hover .gallery-img {
+  transform: scale(1.06);
+}
